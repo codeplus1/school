@@ -23,7 +23,10 @@
                             <label for="name">Faculty Name</label>
                             <input id="name" class="form-control" type="text" name="name">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm mt-3">Save Record</button>
+                        <button type="submit" class="btn btn-success btn-sm mt-4">
+                            <i class="fas fa-save"></i>
+                            save
+                        </button>
                         </form>
                     </div>
                 </div>

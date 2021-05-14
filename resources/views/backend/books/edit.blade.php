@@ -26,7 +26,10 @@
                                 <label for="author">Book Author</label>
                                 <input id="author" class="form-control" type="text" name="author" value="{{ $book->author }}">
                             </div>
-                            <button type="submit" class="btn btn-success btn-sm mt-4">Update Record</button>
+                            <button type="submit" class="btn btn-success btn-sm mt-4">
+                                <i class="fas fa-save"></i>
+                                Update
+                            </button>
                         </form>
                     </div>
                 </div>

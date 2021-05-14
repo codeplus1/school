@@ -45,7 +45,10 @@
                                 <label for="education">Education</label>
                                 <input id="education" class="form-control" type="text" name="education" value="{{ $teacher->education }}">
                             </div>
-                            <button type="submit" class="btn btn-success btn-sm mt-4">Update Record</button>
+                            <button type="submit" class="btn btn-success btn-sm mt-4">
+                                <i class="fas fa-save"></i>
+                                Update Record
+                            </button>
 
                         </form>
                     </div>

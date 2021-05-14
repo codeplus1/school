@@ -50,7 +50,10 @@
                     @error('education')
                     <p class="text-danger alert-danger">{{ $message }}</p>
                     @enderror
-                    <button type="submit" class="btn btn-success btn-sm mt-4">Save</button>
+                    <button type="submit" class="btn btn-success btn-sm mt-4">
+                        <i class="fas fa-save"></i>
+                        save
+                    </button>
                 </form>
             </div>
         </div>

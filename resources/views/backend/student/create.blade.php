@@ -42,8 +42,11 @@
                                    @endforeach
                                </select>
                            </div>
+                            <button type="submit" class="btn btn-success btn-sm mt-4">
+                                <i class="fas fa-save"></i>
+                                save
+                            </button>
 
-                           <button type="submit" class="btn btn-success btn-sm mt-4">Save Record</button>
                        </form>
                 </div>
             </div>

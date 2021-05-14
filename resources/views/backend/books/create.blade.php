@@ -39,7 +39,10 @@
                                 <label for="author">Book Author <span class="text-danger ">(Optional)</span></label>
                                 <input id="author" class="form-control" type="text" name="author" value="{{ old('author') }}">
                             </div>
-                            <button type="submit" class="btn btn-success btn-sm mt-4">Save Record</button>
+                            <button type="submit" class="btn btn-success btn-sm mt-4">
+                                <i class="fas fa-save"></i>
+                                save
+                            </button>
                         </form>
                     </div>
                 </div>

@@ -45,6 +45,13 @@ class StudentController extends Controller
         $student->roll = $request->roll;
         $student->mobile = $request->mobile;
         $student->faculty_id = $request->faculty_id;
+        // for image
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $newName = time() . $file->getClientOriginalName();
+            $file->move('student',$newName);
+            $student->image = 'student/' . $newName;
+        }
         $student->save();
 
         $request->session()->flash('message', 'Record Saved');
@@ -71,8 +78,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
+        $faculties = Faculty::all();
         $student = Student::find($id);
-        return view('backend.student.edit',compact('student'));
+        return view('backend.student.edit',compact('student','faculties'));
     }
 
     /**

@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->integer('age')->nullable();
             $table->string('roll');
             $table->string('mobile')->nullable();
+            $table->string('image')->nullable();
             $table->foreignId('faculty_id')->constant();
             $table->timestamps();
         });

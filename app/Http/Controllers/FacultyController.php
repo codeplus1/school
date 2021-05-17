@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faculty;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class FacultyController extends Controller
@@ -55,7 +56,8 @@ class FacultyController extends Controller
      */
     public function show($id)
     {
-        //
+        $students = Student::where('faculty_id',$id)->get();
+        return view('frontend.pages.profile',compact('students'));
     }
 
     /**

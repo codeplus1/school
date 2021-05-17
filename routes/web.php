@@ -5,6 +5,7 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Models\Faculty;
+use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $faculties = Faculty::paginate(5);
     return view('frontend.pages.index',compact('faculties'));
+});
+
+Route::get('profile', function () {
+    $students = Student::all();
+    return view('frontend.pages.profile',compact('students'));
 });
 
 // Route::get('/students/create', function () {

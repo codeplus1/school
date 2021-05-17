@@ -61,7 +61,7 @@
                     @foreach ($faculties as $faculty)
                         <tr class="table-light">
                             <td>{{ $faculty->id }}</td>
-                            <td>{{ $faculty->name }}</td>
+                            <td><a href="/faculty/{{ $faculty->id }}">{{ $faculty->name }}</a></td>
                         </tr>
                     @endforeach
             </table>

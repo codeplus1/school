@@ -34,8 +34,40 @@
                                <input id="mobile" class="form-control" type="tel" name="mobile" value="{{ $student->mobile }}">
                            </div>
 
-                           <button type="submit" class="btn btn-success btn-sm mt-4">Save Record</button>
+                           <div class="form-group">
+                            <label for="faculty_id">Select Faculty</label>
+                            <select id="faculty_id" class="form-control" name="faculty_id">
+                                @foreach ($faculties as $faculty)
+                                <option value="{{ $faculty->id }}" {{ $faculty->id == $student->faculty_id ? 'selected' : '' }}>{{ $faculty->name }}</option>
+
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="images">Upload photo</label>
+                            <input id="images" class="form-control-file" type="file" name="image">
+                        </div>
+
+                           <button type="submit" class="btn btn-success btn-sm mt-4">Update Record</button>
                        </form>
+
+                       <div class="py-2">
+                           <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $student->id }}"><img src="{{ asset($student->image) }}" alt="" width="120"></a>
+
+                           <!-- Modal -->
+                        <div class="modal fade" id="exampleModal{{ $student->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                    <img src="{{ asset($student->image) }}" alt="" class="img-fluid">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                       </div>
                 </div>
             </div>
         </div>

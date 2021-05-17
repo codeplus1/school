@@ -11,7 +11,7 @@
                     <a href="/students" class="btn btn-primary btn-sm ">Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="/students" method="post">
+                    <form action="/students" method="post" enctype="multipart/form-data">
                         @csrf
                            <div class="form-group">
                                <label for="name">Full Name</label>
@@ -41,6 +41,11 @@
 
                                    @endforeach
                                </select>
+                           </div>
+
+                           <div class="form-group">
+                               <label for="images">Upload photo</label>
+                               <input id="images" class="form-control-file" type="file" name="image">
                            </div>
                             <button type="submit" class="btn btn-success btn-sm mt-4">
                                 <i class="fas fa-save"></i>

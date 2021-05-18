@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Models\Faculty;
@@ -30,14 +31,17 @@ Route::get('profile', function () {
     return view('frontend.pages.profile',compact('students'));
 });
 
+
+
 // Route::get('/students/create', function () {
 //     return view('student.create');
 // });
 
-Route::resource('students',StudentController::class);
+Route::resource('students', StudentController::class);
 Route::resource('teachers', TeacherController::class);
 Route::resource('books', BookController::class);
 Route::resource('faculty', FacultyController::class);
+Route::resource('gallery', GalleryController::class);
 
 
 Auth::routes();

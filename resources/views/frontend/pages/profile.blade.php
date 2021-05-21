@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <div class="container my-5">
-            <h5 class="text-danger" style= "font-weight: 600;font-family: 'Times New Roman', Times, serif;">Our Students Profile</h5>
+            <h1 class="text-uppercase" style= "font-weight: 600;font-family: 'Times New Roman', Times, serif;">Student <span class="text-danger">Profile</span></h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae et illo rem ducimus quam esse molestiae obcaecati magnam hic architecto veniam quod dicta necessitatibus repudiandae, voluptates sapiente, impedit expedita deleniti facere voluptatibus quos omnis ipsum magni repellat. Ipsum eos unde consectetur accusantium dolor quis hic quasi asperiores quibusdam, laborum nam.
         </div>
     </div>

@@ -11,7 +11,7 @@
                     <a href="/students" class="btn btn-primary btn-sm ">Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="/students/{{ $student->id }}" method="post">
+                    <form action="/students/{{ $student->id }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                            <div class="form-group">

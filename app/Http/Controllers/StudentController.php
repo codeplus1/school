@@ -97,9 +97,17 @@ class StudentController extends Controller
         $student->age = $request->age;
         $student->roll = $request->roll;
         $student->mobile = $request->mobile;
+        $student->faculty_id = $request->faculty_id;
+        // for image
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $newName = time() . $file->getClientOriginalName();
+            $file->move('student',$newName);
+            $student->image = 'student/' . $newName;
+        }
         $student->update();
 
-        $request->session()->flash('message', 'Record Updated');
+        $request->session()->flash('message', 'Record updated');
 
         return redirect()->back();
     }

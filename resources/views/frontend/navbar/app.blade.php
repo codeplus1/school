@@ -14,11 +14,16 @@
                 <a class="nav-link" href="/profile">Student Profile</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/galleryprofile">Gallery</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Downloads</a>
               </li>
+              @if (!Auth::check())
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Register
@@ -29,6 +34,13 @@
 
                 </ul>
               </li>
+
+              @else
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome👉{{ Auth::user()->name }}</a>
+              </li>
+              @endif
+
             </ul>
           </div>
         </div>

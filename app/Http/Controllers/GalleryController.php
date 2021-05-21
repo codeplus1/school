@@ -82,7 +82,9 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gallery = Gallery::find($id);
+        $galleries = GalleryImage::where('gallery_id', $id)->get();
+        return view('backend.gallery.edit',compact('gallery','galleries'));
     }
 
     /**
@@ -94,7 +96,28 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required' ,
+        ]);
+        //first save in Gallery Table
+        $gallery = Gallery::find($id);
+        $gallery->name = $request->name;
+        $gallery->update();
+        //after saving record it will generate galery id
+
+        //Save images in Gallery images table
+        if($request->hasFile('images')){
+            foreach($request->images as $image){
+                $galleryimage = new GalleryImage();
+                $newName = time() . $image->getClientOriginalName();
+                $image->move('photos',$newName);
+                $galleryimage->name = 'photos/' . $newName;
+                $galleryimage->gallery_id = $gallery->id;
+                $galleryimage->save();
+            }
+        }
+
+        return redirect()->back();
     }
 
     /**

@@ -25,34 +25,40 @@
                 </button>
                 </form>
 
-                <div class="my-3">
+                <div class=" row my-3">
 
 
                         @foreach ($galleries as $gallery)
-                        <form action="/galleryimage/{{ $gallery->id }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $gallery->id }}">
-                                <div class="my-2">
-                                    <img src="{{ asset($gallery->name) }}" alt="" width="120" >
-                                </div>
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal{{ $gallery->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
+                        <div class="col-md-3">
 
-                                    <div class="modal-body">
-                                            <img src="{{ asset($gallery->name) }}" alt="" class="img-fluid">
+                            <form action="/galleryimage/{{ $gallery->id }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $gallery->id }}">
+                                    <div class="my-2">
+                                        <img src="{{ asset($gallery->name) }}" alt="" class="img-fluid" >
+                                    </div>
+                                </a>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{ $gallery->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
 
+                                        <div class="modal-body">
+                                                <img src="{{ asset($gallery->name) }}" alt="" class="img-fluid">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                       <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+
+
+
                         @endforeach
 
                 </div>

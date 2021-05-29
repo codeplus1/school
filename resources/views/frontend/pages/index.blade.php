@@ -51,21 +51,13 @@
     <div class="py-5">
         <div class="container">
             <h1 class="text-uppercase">Our <span class="text-danger">Faculty</span></h1>
-            <table class="table table-hover table-danger table-striped">
-                <tr>
-                    <th>#</th>
-                    <th>Faculty Name</th>
-                </tr>
-
+            <nav>
 
                     @foreach ($faculties as $faculty)
-                        <tr class="table-light">
-                            <td>{{ $faculty->id }}</td>
-                            <td><a href="/faculty/{{ $faculty->id }}">{{ $faculty->name }}</a></td>
-                        </tr>
-                    @endforeach
-            </table>
-            {!! $faculties->render('pagination::bootstrap-4') !!}
+                            <li><a href="">{{ $faculty->name }}</a></li>
+                   @endforeach
+
+            </nav>
         </div>
     </div>
 @endsection

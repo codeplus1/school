@@ -52,7 +52,7 @@
                            <button type="submit" class="btn btn-success btn-sm mt-4">Update Record</button>
                        </form>
 
-                       <div class="py-2">
+                       <div class=" py-2">
                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $student->id }}"><img src="{{ asset($student->image) }}" alt="" width="120"></a>
 
                            <!-- Modal -->
